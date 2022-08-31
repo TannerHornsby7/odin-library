@@ -111,9 +111,8 @@ form {
 }
 
 .bookcover {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    display: grid;
+    grid-template-rows: 1fr 6fr 4fr 3fr;
     background-color: darkred;
     height: 300px;
     width: 200px;
@@ -122,7 +121,10 @@ form {
         background-color: darkslategrey;
         transition: all 1s ease;
     }
-
+    .top {
+        display: flex;
+        justify-content: left;
+    }
     h2 {
         color: goldenrod;
     }
@@ -151,4 +153,10 @@ form {
         transition: all 1s ease
     }
 
+}
+
+.icon {
+    &:hover {
+        color: black;
+    }
 }

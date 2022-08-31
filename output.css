@@ -127,9 +127,8 @@ form *:last-child:hover {
 }
 
 .bookcover {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-rows: 1fr 6fr 4fr 3fr;
   background-color: darkred;
   height: 300px;
   width: 200px;
@@ -137,6 +136,10 @@ form *:last-child:hover {
 .bookcover:hover {
   background-color: darkslategrey;
   transition: all 1s ease;
+}
+.bookcover .top {
+  display: flex;
+  justify-content: left;
 }
 .bookcover h2 {
   color: goldenrod;
@@ -162,6 +165,10 @@ form *:last-child:hover {
 .backread:hover {
   border-color: darkslategrey !important;
   transition: all 1s ease;
+}
+
+.icon:hover {
+  color: black;
 }
 
 /*# sourceMappingURL=output.css.map */
