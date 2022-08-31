@@ -169,6 +169,7 @@ form *:last-child:hover {
 
 .icon:hover {
   color: black;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -4,12 +4,11 @@ let read = false;
 let i = 0;
 
 // Book object constructor
-function Book(title, author, pages, read, data) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.data = data;
     this.info = function () {
         return title + ", " + author + ", " + pages + ", " + read;
     };
@@ -61,7 +60,7 @@ function DisplayBook(book) {
     let pages = document.createElement('h4');
 
     backcover.classList.add("backofbook");
-    backcover.dataset.index = i;
+    trash.dataset.index = myLibrary.indexOf(book);
     frontcover.classList.add("bookcover");
     bot.classList.add("bot");
     trash.classList.add("icon")
@@ -78,6 +77,13 @@ function DisplayBook(book) {
 
     trash.setAttribute("name", "trash-outline");
     trash.style.fontSize = "16px";
+
+    trash.addEventListener('click', () => {
+        console.log(trash.dataset.index);
+        myLibrary.splice(trash.dataset.index, 1);
+        console.table(myLibrary);
+        DisplayBooks();
+    });
 
     if(read) {
         trash.style.color = "darkgreen";
@@ -115,7 +121,6 @@ addlib.addEventListener('click', () => {
 
 
 //remove book logic
-
 
 //toggle read status logic
 
