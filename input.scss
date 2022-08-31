@@ -72,6 +72,9 @@ form {
         background-color: darkred;
         color: whitesmoke;
         font-weight: 600;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     *:last-child {
@@ -84,6 +87,7 @@ form {
             background-color: black;
             color: white;
             transition: all .5s ease;
+            cursor: pointer;
         }
     }
 
@@ -120,6 +124,7 @@ form {
     &:hover {
         background-color: darkslategrey;
         transition: all 1s ease;
+        cursor: pointer;
     }
     .top {
         display: flex;
@@ -142,7 +147,8 @@ form {
 
     &:hover {
         background-color: darkslategrey !important;
-        transition: all 1s ease
+        transition: all 1s ease;
+        cursor: pointer;    
     }
 }
 
@@ -150,7 +156,8 @@ form {
     border-color: darkgreen !important;
     &:hover {
         border-color: darkslategrey !important;
-        transition: all 1s ease
+        transition: all 1s ease;
+        cursor: pointer;
     }
 
 }

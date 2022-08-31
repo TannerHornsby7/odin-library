@@ -9,6 +9,9 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.toggleRead = function () {
+        this.read = !this.read;
+    }
     this.info = function () {
         return title + ", " + author + ", " + pages + ", " + read;
     };
@@ -70,6 +73,11 @@ function DisplayBook(book) {
     author.textContent = book.author;
     pages.textContent = book.pages;
 
+    backcover.addEventListener('click', () => {
+        book.toggleRead();
+        DisplayBooks();
+    });
+
     if(book.read) {
         backcover.classList.add("backread");
         frontcover.classList.add("read");
@@ -87,6 +95,8 @@ function DisplayBook(book) {
         console.table(myLibrary);
         DisplayBooks();
     });
+
+    backcover.title = "Click To Toggle Read Status";
 
     top.appendChild(trash);
     frontcover.appendChild(top);

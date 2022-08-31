@@ -93,6 +93,9 @@ form button:nth-last-child(2) {
   color: whitesmoke;
   font-weight: 600;
 }
+form button:nth-last-child(2):hover {
+  cursor: pointer;
+}
 form *:last-child {
   grid-area: 5/1/6/3;
   width: 90%;
@@ -103,6 +106,7 @@ form *:last-child:hover {
   background-color: black;
   color: white;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 #library {
@@ -136,6 +140,7 @@ form *:last-child:hover {
 .bookcover:hover {
   background-color: darkslategrey;
   transition: all 1s ease;
+  cursor: pointer;
 }
 .bookcover .top {
   display: flex;
@@ -157,6 +162,7 @@ form *:last-child:hover {
 .read:hover {
   background-color: darkslategrey !important;
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 .backread {
@@ -165,6 +171,7 @@ form *:last-child:hover {
 .backread:hover {
   border-color: darkslategrey !important;
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 .icon:hover {
