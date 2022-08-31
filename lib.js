@@ -1,7 +1,26 @@
-let myLibrary = [];
-const library = document.getElementById('library');
-let read = false;
-let i = 0;
+// Globals
+let myLibrary = [];                                 // Book array
+const library = document.getElementById('library'); // Library Grid
+let i = 0;                                          
+
+// Pop up manager
+function openTheForm() {
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("openBtndiv").style.display = "none";
+  }
+  
+function closeTheForm() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("openBtndiv").style.display = "block";
+
+}
+window.onclick = function (event) {
+    let modal = document.getElementById('popup');
+    if (event.target == modal) {
+      closeTheForm();
+    }
+  }
+
 
 // Book object constructor
 function Book(title, author, pages, read) {
@@ -17,7 +36,8 @@ function Book(title, author, pages, read) {
     };
 }
 
-// read button click manager
+// Read button click manager
+let read = false;                                        // Form Read Status
 const readyornot = document.getElementById('readyornot');
 
 readyornot.addEventListener('click', () => {
@@ -33,7 +53,7 @@ readyornot.addEventListener('click', () => {
 });
 
 
-// add book to object library function
+// Add book to object library function
 function addBookToObjLibrary() {
 
     //form values
@@ -41,17 +61,13 @@ function addBookToObjLibrary() {
     const inAuthor = document.getElementById('author').value;
     const inPages = document.getElementById('pages').value;
 
-    const book = new Book(inTitle, inAuthor, inPages, read, i);
+    const book = new Book(inTitle, inAuthor, inPages, read);
 
-    //appending object to array
     myLibrary.push(book);
-    i++;
-
 }
 
-// add book to display library function
-
-function DisplayBook(book) {
+// Add book to display library function
+function displayBook(book) {
 
     let backcover = document.createElement('div');
     let frontcover = document.createElement('div');
@@ -75,7 +91,7 @@ function DisplayBook(book) {
 
     backcover.addEventListener('click', () => {
         book.toggleRead();
-        DisplayBooks();
+        displayBooks();
     });
 
     if(book.read) {
@@ -93,7 +109,7 @@ function DisplayBook(book) {
         console.log(trash.dataset.index);
         myLibrary.splice(trash.dataset.index, 1);
         console.table(myLibrary);
-        DisplayBooks();
+        displayBooks();
     });
 
     backcover.title = "Click To Toggle Read Status";
@@ -108,23 +124,20 @@ function DisplayBook(book) {
     library.appendChild(backcover);
 }
 
-function DisplayBooks () {
+// Render books from object library
+function displayBooks () {
     while (library.firstChild) {
         library.removeChild(library.lastChild);
     }
     for(let i = 0; i < myLibrary.length; i++) {
-        DisplayBook(myLibrary[i]);
+        displayBook(myLibrary[i]);
     }
 }
 
-//getting form submissions
+// Button to submit book to library
 const addlib = document.getElementById('addlib');
 
-//adding form specified book to library
 addlib.addEventListener('click', () => {
     addBookToObjLibrary();
-    DisplayBooks();
+    displayBooks();
 });
-
-//toggle read status logic
-
