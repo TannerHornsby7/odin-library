@@ -73,10 +73,13 @@ function DisplayBook(book) {
     if(book.read) {
         backcover.classList.add("backread");
         frontcover.classList.add("read");
+        trash.style.color = "darkgreen";
+    } else {
+        trash.style.color = "darkred";
     }
 
     trash.setAttribute("name", "trash-outline");
-    trash.style.fontSize = "16px";
+    trash.style.fontSize = "32px";
 
     trash.addEventListener('click', () => {
         console.log(trash.dataset.index);
@@ -84,12 +87,6 @@ function DisplayBook(book) {
         console.table(myLibrary);
         DisplayBooks();
     });
-
-    if(read) {
-        trash.style.color = "darkgreen";
-    } else {
-        trash.style.color = "darkred";
-    }
 
     top.appendChild(trash);
     frontcover.appendChild(top);
@@ -118,9 +115,6 @@ addlib.addEventListener('click', () => {
     addBookToObjLibrary();
     DisplayBooks();
 });
-
-
-//remove book logic
 
 //toggle read status logic
 
