@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+}
+
+.header,
+.footer {
+  letter-spacing: 10px;
+  font-size: 50px;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+
+.footer {
+  font-size: 25px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: min-content, 1fr;
+  text-align: center;
+}
+
+.addbook {
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.2);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.head {
+  font-size: 35px;
+  margin-top: 5%;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 5%;
+  column-gap: 10%;
+}
+form label {
+  align-self: flex-end;
+  font-size: 24px;
+}
+form input {
+  background-color: white;
+  width: 100%;
+  height: 30px;
+}
+form button:nth-last-child(2) {
+  background-color: white;
+  width: 100%;
+  height: 30px;
+  height: 35px;
+  background-color: darkred;
+  color: whitesmoke;
+  font-weight: 600;
+}
+form *:last-child {
+  grid-area: 5/1/6/3;
+  width: 90%;
+  margin-top: 5%;
+  height: 40px;
+}
+form *:last-child:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+#library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  justify-items: center;
+  max-height: 1000px;
+  overflow-y: scroll;
+}
+
+.backofbook {
+  margin: 10px;
+  background-color: white;
+  border: 5px solid darkred;
+  height: 305px;
+  width: 205px;
+}
+.backofbook:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  border-color: darkslategrey;
+  transition: all 1s ease;
+}
+
+.bookcover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: darkred;
+  height: 300px;
+  width: 200px;
+}
+.bookcover:hover {
+  background-color: darkslategrey;
+  transition: all 1s ease;
+}
+.bookcover h2 {
+  color: goldenrod;
+}
+.bookcover h3 {
+  color: goldenrod;
+}
+.bookcover h4 {
+  color: goldenrod;
+}
+
+.read {
+  background-color: darkgreen !important;
+}
+.read:hover {
+  background-color: darkslategrey !important;
+  transition: all 1s ease;
+}
+
+.backread {
+  border-color: darkgreen !important;
+}
+.backread:hover {
+  border-color: darkslategrey !important;
+  transition: all 1s ease;
+}
+
+/*# sourceMappingURL=output.css.map */

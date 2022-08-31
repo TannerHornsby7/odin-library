@@ -6,11 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
     <script src="lib.js" defer></script>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon" />
     <title>Library</title>
 </head>
 <body>
     <div class="container">
-
+        <div class="header">
+            LIBRARY
+        </div>
+        <div class="body">
+            <div class="addbook">
+                <h2 class="head">Add Your Book</h2>
+                <form action="" method="post">
+                    <label for="title">Title</label>
+                    <label for="author">Author</label>
+                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="author" id="author" placeholder="Author">
+                    <label for="pages">Pages</label>
+                    <label for="button">Read?</label>
+                    <input type="text" name="pages" id="pages" placeholder="# of Pages">
+                    <button type="button" id="readyornot">Not Read</button>
+                    <button type="button" id="addlib">Add to Library</button>
+                </form>
+            </div>
+            <div id="library" class="collection">
+            </div>
+        </div>
+        <div class="footer">
+            Tanner Hornsby
+        </div>
     </div>
 </body>
 </html>
